@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelodyNest — AI Kids Song Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating music notes background -->
+    <div class="bg-notes" aria-hidden="true">
+        <span class="note note-1">♪</span>
+        <span class="note note-2">♫</span>
+        <span class="note note-3">♪</span>
+        <span class="note note-4">♫</span>
+        <span class="note note-5">♪</span>
+        <span class="note note-6">♫</span>
+    </div>
+
+    <div class="container">
+        <!-- Header / Brand -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🎵</span>
+                <h1 class="logo-text">MelodyNest</h1>
+            </div>
+            <p class="tagline">Create little songs with big imagination.</p>
+        </header>
+
+        <!-- Song Generator Card -->
+        <main class="card">
+            <form id="songForm" class="song-form">
+
+                <!-- Song Topic -->
+                <div class="form-group">
+                    <label for="topic">What's your song about?</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">✨</span>
+                        <input
+                            type="text"
+                            id="topic"
+                            name="topic"
+                            placeholder="e.g. A bunny who loves the moon"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Selectors Row -->
+                <div class="selectors-row">
+
+                    <!-- Language -->
+                    <div class="form-group">
+                        <label>Language</label>
+                        <div class="pill-group" role="radiogroup" aria-label="Language">
+                            <button type="button" class="pill active" data-name="language" data-value="english">English</button>
+                            <button type="button" class="pill" data-name="language" data-value="tamil">Tamil</button>
+                        </div>
+                    </div>
+
+                    <!-- Song Style -->
+                    <div class="form-group">
+                        <label>Style</label>
+                        <div class="pill-group" role="radiogroup" aria-label="Song Style">
+                            <button type="button" class="pill active" data-name="style" data-value="kids">🎈 Kids</button>
+                            <button type="button" class="pill" data-name="style" data-value="nursery">🧸 Nursery</button>
+                            <button type="button" class="pill" data-name="style" data-value="lullaby">🌙 Lullaby</button>
+                        </div>
+                    </div>
+
+                    <!-- Duration -->
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <div class="pill-group" role="radiogroup" aria-label="Duration">
+                            <button type="button" class="pill active" data-name="duration" data-value="30">30 sec</button>
+                            <button type="button" class="pill" data-name="duration" data-value="60">60 sec</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Button -->
+                <button type="submit" class="btn-generate" id="generateBtn">
+                    <span class="btn-icon">🎶</span>
+                    <span class="btn-text">Generate Song</span>
+                </button>
+            </form>
+
+            <!-- Result Placeholder (shown after clicking Generate) -->
+            <div id="resultArea" class="result-area hidden">
+                <div class="result-content">
+                    <div class="result-icon">🎧</div>
+                    <h3 class="result-title">Almost there!</h3>
+                    <p class="result-message">
+                        Song generation isn't connected yet.<br>
+                        This is where your magical song will appear!
+                    </p>
+                    <div class="result-summary" id="resultSummary"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💛 for little musicians everywhere</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
